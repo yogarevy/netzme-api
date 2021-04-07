@@ -205,16 +205,13 @@ class ResponseStd
     {
         $return = [];
         $return['meta']['code'] = $code;
+        if (is_array($errors)) {
+            $return['meta']['errors'] = [$errors];
+        } else {
+            $return['meta']['errors'] = $errors;
+        }
         $return['meta']['message'] = $messages;
         $return['page_info'] = self::emptyPageInfo();
-        if (is_array($errors)) {
-            $return['meta']['errors'] = $errors;
-        } else {
-            $errors = [
-                ['errors' => $errors],
-            ];
-            $return['meta']['errors'] = [$errors];
-        }
         $return['data']['items'] = [];
         $return['data']['item'] = (object)[];
 
