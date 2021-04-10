@@ -35,7 +35,7 @@ untuk test API
 php artisan storage:link
 ```
 
-7. Run User Seeder untuk login
+7. Run User Seeder untuk login dan data customer
 ```bash
 php artisan db:seed
 ```
