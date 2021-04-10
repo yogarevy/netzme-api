@@ -48,7 +48,19 @@ class CustomerController extends Controller
             $paged = $paged
                 ->orderBy($sort, $order)
                 ->paginate($limit);
-            return ResponseStd::paginated($paged, Customer::query()->count());
+            $items = [];
+            foreach ($paged as $item) {
+                $items[] = [
+                    'id' => $item->id,
+                    'username' => $item->username,
+                    'name' => $item->name,
+                    'photo_id' => $item->photo,
+                    'photo' => $item->photo ? asset($item->image->getImageUrlAttribute()) : '',
+                    'trx_count' => (int)$item->trx_count,
+                    'trx_amount' => (float)$item->trx_amount
+                ];
+            }
+            return ResponseStd::pagedFrom($items, $paged, Customer::query()->count());
         } catch (\Exception $e) {
             return ResponseStd::fail($e->getMessage());
         }

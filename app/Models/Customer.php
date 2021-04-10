@@ -55,4 +55,9 @@ class Customer extends Model
     {
         return self::select('*');
     }
+
+    public function image()
+    {
+        return $this->belongsTo(Image::class, 'photo', 'id');
+    }
 }

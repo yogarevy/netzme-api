@@ -15,7 +15,8 @@
         "laravel/framework": "^7.29",
         "laravel/tinker": "^2.5",
         "laravel/passport": "~9.0",
-        "webpatser/laravel-uuid": "^3.0"
+        "webpatser/laravel-uuid": "^3.0",
+        "intervention/image": "^2.5"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

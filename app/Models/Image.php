@@ -54,6 +54,11 @@ class Image extends Model
      */
     public function getImageUrlAttribute()
     {
-        return Storage::url($this->attributes['path']);
+        return Storage::url('public/' . $this->attributes['path']);
+    }
+
+    public function getPathAttribute()
+    {
+        return $this->attributes['path'];
     }
 }

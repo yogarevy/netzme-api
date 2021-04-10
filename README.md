@@ -4,7 +4,7 @@ Ini adalah project test simple aplikasi api.
 
 1. Set configuration Environment
 create file ```.env```
-copy ```.env.example``` to ```.env``` or use bash.
+copy inside ```.env.example``` to ```.env``` or use bash.
 ```bash
 cp .env.example .env
 ```
@@ -30,7 +30,12 @@ php artisan passport:install --uuids
 Setelah sukses copy value ```client_id``` dan ```client_secret``` di bagian Password grant client ke Environment Postman
 untuk test API
 
-6. Run User Seeder untuk login
+6. Run Storage link to linked store file
+```bash
+php artisan storage:link
+```
+
+7. Run User Seeder untuk login
 ```bash
 php artisan db:seed
 ```
