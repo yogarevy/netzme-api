@@ -49,6 +49,7 @@ class CustomerController extends Controller
                 ->orderBy($sort, $order)
                 ->paginate($limit);
             $items = [];
+            $sum_txr_amount = (float)Customer::query()->sum('trx_amount');
             foreach ($paged as $item) {
                 $items[] = [
                     'id' => $item->id,
@@ -56,8 +57,10 @@ class CustomerController extends Controller
                     'name' => $item->name,
                     'photo_id' => $item->photo,
                     'photo' => $item->photo ? asset($item->image->getImageUrlAttribute()) : '',
+                    'status' => $item->status,
                     'trx_count' => (int)$item->trx_count,
-                    'trx_amount' => (float)$item->trx_amount
+                    'trx_amount' => (float)$item->trx_amount,
+                    'percentage' => (float)number_format(((float)$item->trx_amount * 100) / $sum_txr_amount, 2, '.', '')
                 ];
             }
             return ResponseStd::pagedFrom($items, $paged, Customer::query()->count());

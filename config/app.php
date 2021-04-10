@@ -166,6 +166,7 @@ return [
          * Package Service Providers...
          */
         Intervention\Image\ImageServiceProvider::class,
+        FruitCake\Cors\CorsServiceProvider::class,
 
         /*
          * Application Service Providers...
