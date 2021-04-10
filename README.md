@@ -7,6 +7,12 @@ Ini adalah project test simple aplikasi api (Backend).
 - Composer
 - PostgreSQL Database
 
+## Fitur
+- Implementing JWT Auth token
+- Handle CORS
+- Stateless
+- Pagination Data
+
 ## Build Setup
 1. Create Database and Set configuration Environment
 create file ```.env``` in root project.
