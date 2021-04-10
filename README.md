@@ -39,7 +39,7 @@ $ php artisan migrate
 $ php artisan passport:install --uuids
 > type yes [enter]
 ```
-Setelah sukses copy value ```client_id``` dan ```client_secret``` di bagian Password grant client ke Environment Postman
+Setelah sukses copy value ```client_id``` dan ```client_secret``` di bagian Password grant client ke Environment Aplikasi Client (Frontend) atau ke Postman
 untuk test API
 
 6. Run Storage link to linked store file
