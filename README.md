@@ -2,8 +2,13 @@
 
 Ini adalah project test simple aplikasi api (Backend).
 
+## Prerequisites
+- PHP >= 7.2.5
+- Composer
+- PostgreSQL Database
+
 ## Build Setup
-1. Set configuration Environment
+1. Create Database and Set configuration Environment
 create file ```.env``` in root project.
 Copy inside ```.env.example``` to ```.env``` or use bash.
 ```bash
